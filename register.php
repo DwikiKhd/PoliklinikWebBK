@@ -5,6 +5,7 @@
     <title>Registrasi Pasien</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/png" href="asset/images/logoudinus.png">
     <!-- CSS Custom untuk Halaman Registrasi -->
     <style>
         body {
@@ -14,7 +15,10 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #29ab67;
+            background-image: url('asset/images/bglogin.jpg'); /* Ganti 'nama_file_gambar.jpg' dengan nama file gambar yang ingin Anda gunakan */
+            background-size: cover; /* Menyesuaikan ukuran gambar agar mengisi seluruh background */
+            background-position: center; /* Posisi gambar di tengah-tengah background */
+            background-repeat: no-repeat; /* Menghindari pengulangan gambar */
         }
 
         .login-container {
@@ -98,7 +102,7 @@
 <body>
     <div class="login-container">
         <div class="left-container">
-            <img src="assets/images/hospital.png" alt="Login Image">
+            <img src="asset/images/poliklinik.jpg" alt="Login Image">
         </div>
         <div class="right-container">
             <div class="login-form">

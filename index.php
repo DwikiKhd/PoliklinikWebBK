@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poliklinik</title>
+    <link rel="icon" type="image/png" href="asset/images/logoudinus.png">
     <style>
         body,
         html {
@@ -56,6 +57,7 @@
 
         .banner-section p {
             text-align: center;
+            color: #fff;
         }
 
         .fade-in {
@@ -166,7 +168,7 @@
     <!-- Section 1: Navbar -->
     <section class="navigation-bar">
         <div class="navbar">
-            <a href="#home">Poliklinik Sehat Ambal Waras</a>
+            <a href="#home">Poliklinik Aman Cuy</a>
         </div>
     </section>
 
@@ -183,7 +185,7 @@
     <section class="login-section">
         <!-- Left Icon and Text -->
         <div class="col-md-6 icon-container">
-            <img src="asset/images/user.png" alt="First Icon">
+            <img src="asset/images/pasien.png" alt="First Icon">
             <h2 style="font-size: 32px;">Login Sebagai Pasien</h2>
             <p>Apabila Anda adalah seorang Pasien, silahkan Login terlebih dahulu untuk melakukan pendaftaran sebagai
                 Pasien!</p>
@@ -192,7 +194,7 @@
 
         <!-- Right Icon and Text -->
         <div class="col-md-6 icon-container">
-            <img src="asset/images/user.png" alt="Second Icon">
+            <img src="asset/images/dokter.png" alt="Second Icon">
             <h2 style="font-size: 32px;">Login Sebagai Dokter</h2>
             <p>Apabila Anda adalah seorang Dokter, silahkan Login terlebih dahulu untuk memulai melayani Pasien!</p>
             <a href="controller.php" class="icon-link">Klik Link Berikut -></a>
@@ -212,10 +214,10 @@
                     <div class="box">
                         <div class="profile">
                             <div class="img-box">
-                                <img src="asset/images/testimoni.png" alt="Client 1">
+                                <img src="asset/images/testimoniuser.png" alt="Client 1">
                             </div>
                             <div class="client_info">
-                                <h6>Nopal</h6>
+                                <h6>Alifiya</h6>
                                 <p>Semarang</p>
                             </div>
                         </div>
@@ -227,10 +229,10 @@
                     <div class="box">
                         <div class="profile">
                             <div class="img-box">
-                                <img src="asset/images/testimoni.png" alt="Client 2">
+                                <img src="asset/images/testimoniuser.png" alt="Client 2">
                             </div>
                             <div class="client_info">
-                                <h6>Ilyas</h6>
+                                <h6>Indri</h6>
                                 <p>Semarang</p>
                             </div>
                         </div>

@@ -63,14 +63,14 @@
                         </h3>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="tambah_daftar_poli.php" method="post">
                             <div class="form-group">
                                 <input type="hidden" class="form-control" id="id_pasien" name="id_pasien"
                                     value="<?= $user_id ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="nama">Nomor Rekam Medis</label>
-                                <input type="text" class="form-control" id="nama" name="nama" value="<?= $antrian ?>"
+                                <label for="no_antrian">Nomor Rekam Medis</label>
+                                <input type="text" class="form-control" id="no_antrian" name="no_antrian" value="<?= $antrian ?>"
                                     required>
                             </div>
                             <div class="form-group">
@@ -90,20 +90,9 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="id_poli">Pilih Jadwal</label>
-                                <select class="form-control" id="id_poli" name="id_poli" required>
-                                    <option value="" disabled selected>Pilih Poli</option>
-                                    <?php
-                                // Ambil data poli dari tabel poli
-                                $queryPoli = "SELECT * FROM poli";
-                                //harusnya jadwal_periksa bla bla
-                                $resultPoli = mysqli_query($mysqli, $queryPoli);
-
-                                // Tampilkan data poli sebagai option dalam dropdown
-                                while ($poli = mysqli_fetch_assoc($resultPoli)) {
-                                    echo "<option value='{$poli["id"]}'>{$poli["nama_poli"]}</option>";
-                                }
-                                ?>
+                                <label for="id_jadwal">Pilih Jadwal</label>
+                                <select class="form-control" id="id_jadwal" name="id_jadwal" required>
+                                    <option value="" disabled selected>Pilih Jadwal</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -201,5 +190,36 @@
             });
         });
     </script>
+    <!-- script pilih jadwal -->
+    <script>
+        $(document).ready(function () {
+            // Event listener untuk perubahan pada dropdown "Pilih Poli"
+            $('#id_poli').on('change', function () {
+                var selectedPoli = $(this).val();
+
+                // Kirim permintaan AJAX untuk mengambil data jadwal_periksa berdasarkan poli yang dipilih
+                $.ajax({
+                    url: 'get_jadwal.php', // Ganti dengan file yang akan menangani permintaan
+                    method: 'POST',
+                    data: {
+                        id_poli: selectedPoli
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        // Bersihkan dan tambahkan data jadwal_periksa ke dropdown "Pilih Jadwal"
+                        $('#id_jadwal').empty();
+                        $.each(data, function (key, value) {
+                            $('#id_jadwal').append('<option value="' + value.id +
+                                '">' + value.hari + ' ' +  value.jam_mulai + '</option>');
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
 
 </div>
